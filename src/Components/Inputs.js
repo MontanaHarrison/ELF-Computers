@@ -11,8 +11,8 @@ class Inputs extends Component {
               id={this.props.itemHash}
               className="feature__option"
               name={this.props.slugify(this.props.feature)}
-              checked={this.props.item.name === this.selected[this.props.feature].name}
-              onChange={() => this.props.update(feature, item)}
+              checked={this.props.item.name === this.props.selected[this.props.feature].name}
+              onChange={(e) => this.props.update(e.target.name, this.props.item)}
             />
             <label htmlFor={this.props.itemHash} className="feature__label">
               {this.props.item.name} ({this.props.USCurrencyFormat.format(this.props.item.cost)})
