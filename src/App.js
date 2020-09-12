@@ -57,7 +57,7 @@ class App extends Component {
       const options = this.props.features[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
         return (
-          <Inputs itemHash={itemHash} slugify={slugify} item={item} feature={feature} USCurrencyFormat={USCurrencyFormat} />
+          <Inputs itemHash={itemHash} slugify={slugify} item={item} feature={feature} USCurrencyFormat={USCurrencyFormat} update={this.updateFeature} />
         );
       });
 

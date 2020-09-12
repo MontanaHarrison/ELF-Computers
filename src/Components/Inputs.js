@@ -3,35 +3,6 @@ import React, { Component } from 'react';
 
 class Inputs extends Component {
 
-    state = {
-    selected: {
-      Processor: {
-        name: '17th Generation Intel Core HB (7 Core with donut spare)',
-        cost: 700
-      },
-      'Operating System': {
-        name: 'Ubuntu Linux 16.04',
-        cost: 200
-      },
-      'Video Card': {
-        name: 'Toyota Corolla 1.5v',
-        cost: 1150.98
-      },
-      Display: {
-        name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
-        cost: 1500
-      }
-    }
-  };
-
-  updateFeature = (feature, newValue) => {
-    const selected = Object.assign({}, this.state.selected);
-    selected[feature] = newValue;
-    this.setState({
-      selected
-    });
-  };
-
   render(){
   return (
     <div key={this.props.itemHash} className="feature__item">
@@ -40,8 +11,8 @@ class Inputs extends Component {
               id={this.props.itemHash}
               className="feature__option"
               name={this.props.slugify(this.props.feature)}
-              checked={this.props.item.name === this.state.selected[this.props.feature].name}
-              onChange={e => this.updateFeature(this.props.feature, this.props.item)}
+              checked={this.props.item.name === this.selected[this.props.feature].name}
+              onChange={() => this.props.update(feature, item)}
             />
             <label htmlFor={this.props.itemHash} className="feature__label">
               {this.props.item.name} ({this.props.USCurrencyFormat.format(this.props.item.cost)})
