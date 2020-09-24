@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FEATURES from '../Features.js'
 
 
 class Inputs extends Component {
@@ -11,7 +12,7 @@ class Inputs extends Component {
               type="radio"
               id={this.props.itemHash}
               className="feature__option"
-              name={this.props.slugify(this.props.feature)}
+              name={this.props.slugify(FEATURES)}
               checked={this.props.item.name === this.props.selected[this.props.feature].name}
               onChange={(e) => this.props.update(this.props.feature, this.props.item)}
             />

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import slugify from 'slugify';
 
 import './App.css';
+import FEATURES from './Features.js'
 import Header from './Components/Header'
 import Main from './Components/Main'
 import Cost from './Components/Cost'
@@ -52,12 +53,12 @@ class App extends Component {
   };
 
   render() {
-    const features = Object.keys(this.props.features).map((feature, idx) => {
+    const features = Object.keys(FEATURES).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
-      const options = this.props.features[feature].map(item => {
+      const options = FEATURES[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
         return (
-          <Inputs itemHash={itemHash} slugify={slugify} item={item} selected={this.state.selected} feature={feature} USCurrencyFormat={USCurrencyFormat} update={this.updateFeature} key={this.idx} />
+          <Inputs itemHash={itemHash} slugify={slugify} item={item} selected={this.state.selected} USCurrencyFormat={USCurrencyFormat} update={this.updateFeature} key={this.idx} />
         );
       });
 
