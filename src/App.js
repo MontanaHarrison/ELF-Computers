@@ -52,7 +52,7 @@ class App extends Component {
   };
 
   render() {
-    const features = Object.keys(FEATURES).map((feature, idx) => {
+     const features = Object.keys(FEATURES).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const options = FEATURES[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
