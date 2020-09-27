@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from './Header.js'
 
 
 function Main (props) {
   return (
       <div className="App">
+        <Header />
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>

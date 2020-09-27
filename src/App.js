@@ -6,7 +6,6 @@ import slugify from 'slugify';
 
 import './App.css';
 import FEATURES from './Features.js'
-import Header from './Components/Header'
 import Main from './Components/Main'
 import Cost from './Components/Cost'
 import Options from './Components/Options'
@@ -58,7 +57,7 @@ class App extends Component {
       const options = FEATURES[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
         return (
-          <Inputs itemHash={itemHash} slugify={slugify} item={item} selected={this.state.selected} USCurrencyFormat={USCurrencyFormat} update={this.updateFeature} key={this.idx} />
+          <Inputs itemHash={itemHash} slugify={slugify} item={item} selected={this.state.selected} feature={feature} USCurrencyFormat={USCurrencyFormat} update={this.updateFeature} key={this.idx} />
         );
       });
 
@@ -83,7 +82,6 @@ class App extends Component {
 
     return (
       <div>
-      <Header />
       <Main features={features} summary={summary} USCurrencyFormat={USCurrencyFormat} total={total} />
       </div>
     );
