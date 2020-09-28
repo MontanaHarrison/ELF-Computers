@@ -56,9 +56,6 @@ class App extends Component {
       const featureHash = feature + '-' + idx;
       const options = FEATURES[feature].map(item => {
         const itemHash = slugify(JSON.stringify(item));
-        return (
-          <Inputs itemHash={itemHash} slugify={slugify} item={item} selected={this.state.selected} feature={feature} USCurrencyFormat={USCurrencyFormat} update={this.updateFeature} key={this.idx} />
-        );
       });
 
       return (
