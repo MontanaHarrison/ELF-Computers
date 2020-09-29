@@ -9,7 +9,6 @@ import FEATURES from './Features.js'
 import Main from './Components/Main'
 import Cost from './Components/Cost'
 import Options from './Components/Options'
-import Inputs from './Components/Inputs'
 
 
 // This object will allow us to
